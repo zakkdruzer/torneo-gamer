@@ -77,3 +77,38 @@ paraCadaJugador((j) => {
 });
 
 console.log("")
+
+console.log("%cEtapa 5 · Arrow como 'condición' (predicado)", "font-weight: bold; color: green; font-size: 15px;");
+console.log("")
+
+// const contarJugadoresQue = (condicion) => {
+//   recorre con for, suma 1 cuando condicion(jugador) sea true, y retorna la cuenta
+// };
+const contarJugadoresQue = (condicion) => {
+  let cuenta = 0;
+
+  for (let i = 0; i < jugadores.length; i++) {
+    const jugador = jugadores[i];
+    if (condicion(jugador)) {
+      cuenta++;
+    }
+  }
+
+  return cuenta;
+};
+
+// Prueba 1: cuántos tienen total >= 400
+const con400PtsOMas = contarJugadoresQue(
+  (j) => puntajeTotal(j) >= 400
+);
+
+console.log(`Con 400+ puntos: ${con400PtsOMas}`);
+
+// Prueba 2: cuántos son de país "CL"
+const delPaisCL = contarJugadoresQue(
+  (j) => j.pais === "CL"
+);
+
+console.log(`Del país CL: ${delPaisCL}`);
+
+console.log("")
