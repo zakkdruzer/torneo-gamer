@@ -151,3 +151,42 @@ paraCadaJugador((j) => {
 });
 
 console.log("")
+
+console.log("%cEtapa 7 · Medalla por puntaje (guard clauses)", "font-weight: bold; color: green; font-size: 15px;");
+console.log("")
+
+// const reporteTorneo = () => {
+//   imprime el título
+//   paraCadaJugador((j) => ... nombre, total, promedio, medalla, clasificar ...)
+//   imprime estadísticas con contarJugadoresQue(...)
+// };
+const reporteTorneo = () => {
+  console.log("===== TORNEO GAMER 2026 =====");
+  console.log("");
+  console.log("-- JUGADORES --");
+
+  paraCadaJugador((j) => {
+    const total = puntajeTotal(j);
+    const prom = promedio(j);
+    const m = medalla(total);
+    const estado = clasificar(j); // usa mínimo por defecto 400
+
+    console.log(
+      `${j.nombre} ${total} pts (prom ${prom}) → ${m} → ${estado}`
+    );
+  });
+
+  console.log("");
+  console.log("-- ESTADÍSTICAS --");
+
+  const clasificados = contarJugadoresQue((j) => puntajeTotal(j) >= 400);
+  const deCL = contarJugadoresQue((j) => j.pais === "CL");
+
+  console.log(`Clasificados a la final: ${clasificados}`);
+  console.log(`Jugadores de CL: ${deCL}`);
+};
+
+// reporteTorneo();   // una sola llamada genera todo el informe
+reporteTorneo();
+
+console.log("")
