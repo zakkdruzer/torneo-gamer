@@ -49,3 +49,31 @@ const crearResumen = (jugador) => ({
 console.log(crearResumen(gandalf));
 
 console.log("")
+
+console.log("%cEtapa 4 · Tu propio 'para cada jugador' ", "font-weight: bold; color: green; font-size: 15px;");
+console.log("")
+
+// const paraCadaJugador = (accion) => {
+//   recorre 'jugadores' con un for y ejecuta accion(jugadores[i])
+// };
+
+const paraCadaJugador = (accion) => {
+  for (let i = 0; i < jugadores.length; i++) {
+    accion(jugadores[i]);
+  }
+};
+
+// Pruébala con DOS arrow distintas:
+// 1) que imprima solo el nombre
+console.log("-- solo nombre --");
+paraCadaJugador((j) => {
+  console.log(j.nombre);
+});
+
+// 2) que imprima nombre + país
+console.log("-- nombre y país --");
+paraCadaJugador((j) => {
+  console.log(`${j.nombre} - ${j.pais}`);
+});
+
+console.log("")
