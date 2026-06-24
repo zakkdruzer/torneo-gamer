@@ -112,3 +112,22 @@ const delPaisCL = contarJugadoresQue(
 console.log(`Del país CL: ${delPaisCL}`);
 
 console.log("")
+
+console.log("%cEtapa 6 · Clasificar con valor por defecto", "font-weight: bold; color: green; font-size: 15px;");
+console.log("")
+
+// const clasificar = (jugador, minimo = 400) => { ... return ... };
+const clasificar = (jugador, minimo = 400) => {
+  if (puntajeTotal(jugador) >= minimo) {
+    return "Clasificado";
+  }
+
+  return "Eliminado";
+};
+
+// Prueba: Aragorn (sin mínimo), Gandalf (sin mínimo), Aragorn con 300
+console.log(`Aragorn: ${clasificar(aragorn)}`);             // mínimo por defecto 400
+console.log(`Gandalf: ${clasificar(gandalf)}`);             // mínimo por defecto 400
+console.log(`Aragorn (mínimo 300): ${clasificar(aragorn, 300)}`);
+
+console.log("")
