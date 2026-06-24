@@ -131,3 +131,23 @@ console.log(`Gandalf: ${clasificar(gandalf)}`);             // mínimo por defec
 console.log(`Aragorn (mínimo 300): ${clasificar(aragorn, 300)}`);
 
 console.log("")
+
+console.log("%cEtapa 7 · Medalla por puntaje (guard clauses)", "font-weight: bold; color: green; font-size: 15px;");
+console.log("")
+
+// const medalla = (total) => { ... varios if con return ... };
+const medalla = (total) => {
+  if (total >= 800) return "🥇 Oro";
+  if (total >= 500) return "🥈 Plata";
+  if (total >= 300) return "🥉 Bronce";
+  return "Sin medalla";
+};
+
+// Con paraCadaJugador, imprime: nombre, total y medalla de cada uno
+paraCadaJugador((j) => {
+  const total = puntajeTotal(j);
+  const m = medalla(total);
+  console.log(`${j.nombre} (${total}): ${m}`);
+});
+
+console.log("")
