@@ -34,3 +34,18 @@ console.log(`Aragorn: total ${puntajeTotal(aragorn)}, promedio ${promedio(aragor
 console.log(`Gandalf: total ${puntajeTotal(gandalf)}, promedio ${promedio(gandalf)}`);
 
 console.log("")
+
+console.log("%cEtapa 3 · Una arrow que devuelve un objeto", "font-weight: bold; color: green; font-size: 15px;");
+console.log("")
+
+// const crearResumen = (jugador) => ({ ... });   // ¡ojo con los () !
+const crearResumen = (jugador) => ({
+  nombre: jugador.nombre,
+  total: puntajeTotal(jugador),
+  promedio: promedio(jugador),
+});
+
+// Muestra el resumen de Gandalf
+console.log(crearResumen(gandalf));
+
+console.log("")
